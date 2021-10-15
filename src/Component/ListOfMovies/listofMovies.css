@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Card_list_image {
+    height: 400px;
+}
+.NameOfMovie {
+    white-space: nowrap;
+    width: 80%;
+    margin:0.3rem auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none !important;
+    color: #000 !important;
+}
+@media screen and (max-width:1200px){
+    .Carousel_Item {
+        height: 30rem;
+    }
+    
+    
+}
+

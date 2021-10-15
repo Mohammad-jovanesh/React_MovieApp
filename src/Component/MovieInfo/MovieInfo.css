@@ -1,0 +1,133 @@
+.Movie_Image {
+    height: 30rem;
+    
+    cursor: pointer;
+}
+.overlayer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(68, 68, 68, 0);
+    transition: all 0.3s ease;
+    
+}
+
+
+
+.Play_icon {
+    color: goldenrod;
+    font-size: 2rem;
+    position: absolute ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+   
+}
+
+.Movie_Image:hover .overlayer {
+    
+    background-color: rgba(68, 68, 68, 0.5);
+    transition: all 0.3s ease;
+    
+}
+
+.Movie_Image:hover .Play_icon{
+    opacity: 1;
+    pointer-events: visible;
+    transition: all 0.3s ease 0.1s;
+}
+.modal_movie {
+    width: 100%;
+}
+.modal-dialog {
+    max-width: 90% !important;
+}
+.modal-content {
+    height: 80vh;
+    background-color: rgb(7, 7, 7);
+
+}
+.NameOfMovie{
+    text-align: left;
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+.GenreList{
+    
+    margin-top: 2rem;
+}
+.CardCast {
+    width: 18rem;
+}
+@media screen and (max-width:1200px){
+    .CardCast {
+        width: 100% ;
+    }
+}
+@media screen and (max-width:992px){
+    .Movie_Image {
+        height: 20rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }  
+}
+@media screen and (max-width:768px){
+    .Movie_Image {
+        height: 18rem;
+        cursor: pointer;
+    }  
+    .CardCast {
+        width: 100% ;
+        margin-top: 1rem;
+    }
+   
+    .Movie_Image img{
+        width: 100% !important;
+       
+        object-fit: fill;
+    }
+}
+@media screen and (max-width:576px){
+    .Movie_Image {
+        height: 15rem;
+        width: 100% !important;
+        margin: auto;
+        cursor: pointer;
+        padding: 0 !important;
+        overflow: hidden;
+    }
+    .Movie_Image img{
+        width: 100% !important;
+       
+        object-fit: fill;
+    }
+    .NameOfMovie{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+  .OverviewSection strong{
+      font-size:1.2rem !important;
+  }
+  .OverviewSection span{
+    font-size:1rem !important;
+}
+    .modal-dialog {
+        max-width: 95% !important;
+        margin: auto;
+        top: 20%;
+        
+    }
+    .modal-content {
+        height: 300px;
+        background-color: rgb(7, 7, 7);
+    }
+    .CardCast {
+        max-width: 15rem;
+        margin: 1rem auto;
+    }
+}

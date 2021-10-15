@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.Slider_Name_Movie{
+    margin-bottom: 1rem !important;
+    padding: 1rem !important;
+    background-color: #f1f1f183;
+    color: #000;
+ }
+
+@media screen and (max-width:992px){
+    .Carousel_Item {
+        height: 18rem;
+        transition: all 0.5s ease;
+    }
+    .Slider_Name_Movie{
+       margin-bottom: 1rem !important;
+       padding: 1rem !important;
+       background-color: #f1f1f183;
+       color: #000;
+       
+    }
+    
+    
+}
+
+@media screen and (max-width:576px){
+    .Carousel_Item {
+        height: 20rem;
+    }
+    .Slider_Name_Movie{
+      font-size: 1rem;
+      padding: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+       
+    }
+    .Display_Accordion {
+        display: block !important;
+    }
+    
+}
+
+@media screen and (max-width:430px){
+    .Carousel_Item {
+        height: 15rem;
+    }
+}

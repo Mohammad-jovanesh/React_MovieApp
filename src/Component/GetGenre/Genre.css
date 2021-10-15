@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.Display_Accordion {
+    display: none !important;
+    margin: 1rem;
+}
+
+
+
+
+@media screen and (max-width:576px){
+   
+    .Display_Accordion {
+        display: block !important;
+    }
+    .Btn_Genre {
+        display: none !important;
+    }
+}
