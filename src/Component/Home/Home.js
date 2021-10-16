@@ -9,6 +9,7 @@ export const Home =()=>{
     const [SliderPic,SetSliderPic]=useState(null)
     
     useEffect(async()=>{
+      window.scrollTo(0, 0);
       const Data=await FetchMovies()
       console.log(await FetchMovies())
       SetSliderPic(Data.slice(0,5))

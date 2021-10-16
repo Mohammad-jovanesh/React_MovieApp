@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee ,faPlay} from '@fortawesome/free-solid-svg-icons'
 import { Link, useParams } from 'react-router-dom'
 import ReactPlayer from 'react-player'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 export const MovieInfo=()=>{
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -17,9 +18,10 @@ export const MovieInfo=()=>{
     const [similar,SetSimilar]=useState(null)
 
     useEffect(async()=>{
-        console.log(await GetSimilarMovies(id))
+      window.scrollTo(0, 0);
+        
         const Res_Similar=await GetSimilarMovies(id)
-        console.log(Res_Similar.slice(0,4))
+       
         SetSimilar(Res_Similar.slice(0,4))
         const {results}=await GetVideo(id)
         if(results[0].key!==null){
@@ -39,7 +41,12 @@ export const MovieInfo=()=>{
             
            <div className="Movie_Image w-100  position-relative" onClick={()=>setShow(true)}>
                <div className="overlayer"></div>
-               <img src={`${details&&details.backdrop}`}  onError={(e)=>{e.target.onerror = null; e.target.src="Image/react-logo.png"}} className="img-fluid w-100 h-100"/>
+               <LazyLoadImage
+      alt={"sorry no image"}
+      height={"100%"}
+      src={details&&details.backdrop} 
+      width={"100%"} />
+               
                <FontAwesomeIcon icon={faPlay} className="Play_icon"/>
                
            </div>
@@ -48,10 +55,12 @@ export const MovieInfo=()=>{
             </div> 
            <div className="GenreList
             d-flex 
+            flex-sm-row
+            flex-column
             align-items-cnter 
             justify-content-center
             justify-content-sm-start">
-              {details&&details.genres.map((m,index)=>{return <Button variant="outline-secondary" className="ms-3" key={index}>{m.name}</Button>})}
+              {details&&details.genres.map((m,index)=>{return <Button variant="outline-secondary" className="ms-3 mb-3 mb-sm-0 " key={index}>{m.name}</Button>})}
            </div> 
               <div className="OverviewSection mt-4 ms-4 mt-sm-5 ">
                  <p className=" text-start px-5 px-sm-0 "><strong className="me-2 h3">Overview : </strong>
@@ -60,8 +69,12 @@ export const MovieInfo=()=>{
                 <div className="row">
                       {Costs&&Costs.slice(0,4).map((cast,index)=>{return <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}> <Card  className="CardCast" >
                          <Card.Body>
-                            <img src={cast.Image} className="img-fluid w-100" alt=""
-                            onError={(e)=>{e.target.onerror = null; e.target.src="Image/react-logo.png"}}/>
+                         <LazyLoadImage
+      alt={"sorry no image"}
+      height={"auto"}
+      src={cast.Image} 
+      width={"100%"} />
+                           
                             <Card.Text className="mt-4 h5">
                              {cast.Name}
                             </Card.Text>
@@ -76,9 +89,7 @@ export const MovieInfo=()=>{
                          <Card.Body>
                            <Card.Title className="NameOfMovie">{movie.title}</Card.Title>
                            <Card.Text>
-     
                            </Card.Text>
-   
                          </Card.Body>
              </Card>
              </Link></div>})}

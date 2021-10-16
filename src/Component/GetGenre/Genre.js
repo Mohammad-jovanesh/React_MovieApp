@@ -24,7 +24,7 @@ export const GetGenre=()=>{
     return (
         <div >
   <Accordion defaultActiveKey="0" className="Display_Accordion">
-    <Accordion.Item eventKey="0" >
+    <Accordion.Item eventKey="1" >
      <Accordion.Header>Genre</Accordion.Header>
        <Accordion.Body>
            <div className="row">

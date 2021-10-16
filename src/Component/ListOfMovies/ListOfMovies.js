@@ -22,6 +22,7 @@ export const ListOfMoviesByGenre=(props)=>{
           {listGenre&&listGenre.map((movie,index)=>{return <div className="col-12 col-lg-3 col-md-4 col-sm-6" key={index}>
           <Link to={`/movieinfo/${movie.id}`} style={{textDecoration:"none"}}><Card style={{ width: '100%', margin:"1rem auto"}}>
                <Card.Img variant="top" src={movie.poster} className="Card_list_image"/>
+               
                          <Card.Body>
                            <Card.Title className="NameOfMovie">{movie.title}</Card.Title>
                            <Card.Text>
